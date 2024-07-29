@@ -1,0 +1,140 @@
+* { box-sizing: var(border-box);}
+
+@keyframes rotate {
+    100%{
+        background-position: 15% 50%;
+    }
+}
+
+:root{
+    --color-primary: #111;
+}
+body{
+    font-family: genos;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    height: 100vh;
+    padding: 0 24px;
+    background-color: var(--color-primary);
+    background-image: url(background.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    animation: rotate 6s infinite alternate linear;
+}
+
+body::after{
+    font-family: genos;
+    content: "";
+    position: absolute;
+    inset-inline: 0%;
+    background: rgba(90, 86, 86, 0.68);
+}
+.login-card{
+    font-family: genos;
+    position: center;
+    z-index: 3;
+    width: 100%;
+    margin: 0 20px;
+    padding: 70px 30px 44px;
+    border-radius: 5%;
+    background: rgb(24 21 36 / 66%);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.login-card > h2 {
+    font-family: Genos;
+    color:#9c6644;
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+.login-card > h3 {
+    font-family: Genos;
+    color: #9c6644;
+    margin: 0 0 48px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.login-form{
+    width: 100%;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+}
+
+.login-form 
+> :is(input, button){
+    font-family: genos;
+    width: 100%;
+    height: 56px;
+    border-radius: 6px;
+    border: 5%;
+}
+
+.login-form > input{
+    font-family: genos;
+    color: #1d1a39;
+    background: #ddb892;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+}
+
+.login-form
+> input::placeholder{
+   color: black;
+}
+
+.login-form > button{
+      cursor: pointer;
+      width: 100%;
+      height: 56px;
+      padding: 0 16px;
+      background: var(--color-primary);
+      color: #ddb892;
+      border: 0;
+      font-family: Genos;
+      font-size: 18px;
+      font-weight: 400;
+      text-align: center;
+      transition: all 0.375s;
+}
+
+.login-form > a {
+    font-family: genos;
+    color: #ddb892;
+    font-size: 16px;
+    text-align: left;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+@media(width >= 448px){
+    .login-card{
+        margin: 0;
+        width: 70%;
+        min-width: 400px;
+    }
+}
+
+@media(width >= 628px){
+    .login-card{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 44px;
+        width: 50%;
+        max-width: 500px;
+        min-width: auto;
+        display: flex;
+        border-radius: 5%;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px 10px 10px 10px;
+    }
+}
